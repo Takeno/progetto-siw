@@ -19,8 +19,8 @@ public class Fornitore {
     @ManyToMany(mappedBy = "fornitore") 
     protected Set<Prodotto> prodotti;
      
-    @OneToOne(mappedBy = "fornitore") 
-    protected Indirizzo indirizzo;
+    // @OneToOne(mappedBy = "fornitore") 
+    // protected Indirizzo indirizzo;
 
 
     public Fornitore(){
@@ -43,9 +43,9 @@ public class Fornitore {
     }
     
 
-    public Indirizzo getIndirizzo() {
-        return this.indirizzo;  
-    }
+    // public Indirizzo getIndirizzo() {
+    //     return this.indirizzo;  
+    // }
     
 
     public void setId(long myId) {
@@ -59,22 +59,19 @@ public class Fornitore {
     
 
     public void addProdotto(Prodotto newProdotto) {
-        this.prodotto.add(newProdotto);
+        this.prodotti.add(newProdotto);
     }
     
 
-    public void setIndirizzo(Indirizzo myIndirizzo) {
-        this.basicSetIndirizzo(myIndirizzo);
-        myIndirizzo.basicSetFornitore(this);
+    // public void setIndirizzo(Indirizzo myIndirizzo) {
+    //     this.indirizzo = myIndirizzo;
             
-    }
+    // }
 
     public void removeProdotto(Prodotto oldProdotto) {
-        if(this.prodotto == null)
+        if(this.prodotti == null)
             return;
         
-        if (this.prodotto.remove(oldProdotto))
-            oldProdotto.removeFornitore(this);
-            
+        this.prodotti.remove(oldProdotto);
     }
 }

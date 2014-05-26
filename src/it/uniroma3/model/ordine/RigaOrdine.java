@@ -26,7 +26,7 @@ public class RigaOrdine {
     @JoinColumn(nullable = false) 
     protected Prodotto prodotto;
 
-    public RigheOrdine(){
+    public RigaOrdine(){
         super();
     }
 

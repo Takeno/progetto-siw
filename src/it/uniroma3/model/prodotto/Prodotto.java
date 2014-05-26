@@ -3,7 +3,7 @@ package it.uniroma3.model.prodotto;
 import java.util.Set;
 import java.util.HashSet;
 import javax.persistence.*;
-import it.uniroma3.model.fornitore;
+import it.uniroma3.model.fornitore.Fornitore;
 import it.uniroma3.model.ordine.RigaOrdine;
 
  
@@ -30,7 +30,6 @@ public class Prodotto {
     @ManyToMany 
     private Set<Fornitore> fornitori;
 
-     
     @OneToMany(mappedBy = "prodotto") 
     private Set<RigaOrdine> righeOrdine;
 
@@ -111,7 +110,7 @@ public class Prodotto {
     }
     
 
-    public void addRigheOrdine(RigheOrdine newRigheOrdine) {
+    public void addRigheOrdine(RigaOrdine newRigheOrdine) {
         this.righeOrdine.add(newRigheOrdine);
     }
     

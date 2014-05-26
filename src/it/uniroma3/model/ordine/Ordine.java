@@ -2,6 +2,7 @@ package it.uniroma3.model.ordine;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Date;
 import javax.persistence.*;
 
 @Entity 
@@ -27,9 +28,9 @@ public class Ordine {
     @OneToMany(mappedBy = "ordine") 
     protected Set<RigaOrdine> righe;
 
-    @ManyToOne 
-    @JoinColumn(nullable = false) 
-    protected Cliente cliente;
+    // @ManyToOne 
+    // @JoinColumn(nullable = false) 
+    // protected Cliente cliente;
 
     public Ordine(){
         this.righe = new HashSet<RigaOrdine>();
@@ -59,9 +60,9 @@ public class Ordine {
     }
     
 
-    public Cliente getCliente() {
-        return this.cliente;    
-    }
+    // public Cliente getCliente() {
+    //     return this.cliente;    
+    // }
     
     public void setId(long myId) {
         this.id = myId; 
@@ -88,9 +89,9 @@ public class Ordine {
     }
     
 
-    public void setCliente(Cliente myCliente) {
-        this.cliente = myCliente;
-    }
+    // public void setCliente(Cliente myCliente) {
+    //     this.cliente = myCliente;
+    // }
     
     public void removeRighe(RigaOrdine oldRighe) {
         this.righe.remove(oldRighe);
