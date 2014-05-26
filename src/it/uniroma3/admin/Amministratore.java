@@ -46,16 +46,18 @@ public class Amministratore {
 		this.password = password;
 	}
 	
-	public boolean checkPassword(String password){
+	public boolean checkPwd(String password){
 		return this.password.equals(password);
 	}
 	
+	@Override
 	public boolean equals(Object obj){
 		Amministratore admin = (Amministratore)obj;
 		return this.nickname.equals(admin.getNickname()) &&
 				this.password.equals(admin.getPassword());
 	}
 	
+	@Override
 	public int hashCode(){
 		return (this.nickname+this.password).hashCode();
 	}
