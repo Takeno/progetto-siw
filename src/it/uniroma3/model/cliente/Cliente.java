@@ -1,7 +1,9 @@
-package it.uniroma3.customer;
+package it.uniroma3.model.cliente;
 
-import it.uniroma3.db.orders.Order;
+import it.uniroma3.model.indirizzo.Indirizzo;
+import it.uniroma3.model.ordine.Ordine;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -47,6 +50,7 @@ public class Cliente {
 		this.dateOfBirth = dateOfBirth;
 		this.indirizzo = indirizzo;
 		this.registrationDate = Calendar.getInstance();
+		this.ordini = new ArrayList<Ordine>();
 	}
 
 

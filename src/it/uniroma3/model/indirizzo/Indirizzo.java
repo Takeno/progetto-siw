@@ -1,4 +1,4 @@
-package it.uniroma3.address;
+package it.uniroma3.model.indirizzo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
